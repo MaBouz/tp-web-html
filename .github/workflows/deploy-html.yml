@@ -16,6 +16,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
 
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./   # dossier à publier
-          publish_branch: gh-pages
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+           publish_dir: ./      # dossier contenant index.html
+           publish_branch: gh-pages
+           force_orphan: true   # créer la branche si elle n’existe pas
