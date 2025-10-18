@@ -2,7 +2,7 @@ name: Deploy HTML to GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # Déclenche le workflow à chaque push sur main
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -14,9 +14,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-
         with:
-           github_token: ${{ secrets.GH_TOKEN }}   # utiliser le PAT
-           publish_dir: ./                          # dossier contenant index.html
-           publish_branch: gh-pages
-           force_orphan: true        
+          github_token: ${{ secrets.GH_TOKEN }}  # <-- utiliser le PAT
+          publish_dir: ./                          # dossier contenant index.html
+          publish_branch: gh-pages
+          force_orphan: true                       # créer la branche si elle n'existe pas
